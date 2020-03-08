@@ -1,0 +1,38 @@
+:root {
+    --blue:#7D97CE;--yellow:#F6BC53;
+}
+
+#index-title {
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+#insta-title {
+    letter-spacing: .15em;
+    font-weight: 200;
+    font-family: "Cutive";
+    font-style: italic;
+    text-shadow: 2px 2px 3px black;
+}
+
+#insta a {
+    text-decoration: none;
+    width: 350px;
+    font-family: "Comfortaa", sans-serif;
+    box-shadow: 2px 2px 3px var(--blue);
+    color: white!important;
+    padding: 15px 0px;
+}
+
+#insta .btn {
+    background: var(--yellow);
+}
+
+#insta .btn:hover {
+    background: white;
+    color: var(--yellow)!important;
+}
+
+.insta-button {
+    color: green;
+}
