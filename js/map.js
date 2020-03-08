@@ -3,9 +3,8 @@ var map, infoWindow, service;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 118.2851, lng: 34.0224},
-        zoom: 6
+        zoom: 12,
     });
-    infoWindow = new google.maps.InfoWindow;
 
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
@@ -17,15 +16,21 @@ function initMap() {
             lng: position.coords.longitude
         };
         map.setCenter(pos);
-        var marker = new google.maps.Marker({position: {lat: clat, lng: clng}, map: map});
+        
+        var marker = new google.maps.Marker({
+            position: {lat: clat, lng: clng}, 
+            map: map,
+            animation: google.maps.Animation.DROP,
+        });
         var marker = new google.maps.Marker({position: {lat: clat+.04, lng: clng+.02}, map: map});
         var marker = new google.maps.Marker({position: {lat: clat-.03, lng: clng+.04}, map: map});
         var marker = new google.maps.Marker({position: {lat: clat-.04, lng: clng-.02}, map: map});
-        var marker = new google.maps.Marker({position: {lat: clat+.03, lng: clng-.04}, map: map});
-        map.setZoom(12);
+        var marker = new google.maps.Marker({position: {lat: clat-.03, lng: clng-.04}, map: map});
+        
         }, function() {
         handleLocationError(true, infoWindow, map.getCenter());
         });
+
     } else {
         // Browser doesn't support Geolocation
         handleLocationError(false, infoWindow, map.getCenter());
